@@ -31,7 +31,7 @@ The parameters are the following
 
   * classical options for [sim_vehicle.py](https://github.com/ArduPilot/ardupilot/blob/master/Tools/autotest/sim_vehicle.py). Note the `--aircraft` option is already used into the script with a fix value. The simulation logs will be stored into the host (see the next section).  
 
-As example, start SITL simulator for Rover with console and map.
+As example, start SITL simulator for Rover with console and map
 
 ```
 $ ./startSITLSimulator_MACOSX.sh rover --console --map
@@ -52,7 +52,7 @@ $ mode auto
 
 # Directories during execution
 
-When you start the script for the first time, two directories will be created on the Host.
+When you start the script for the first time, two directories will be created on the Host
 
 * _build_sitl_: contains the compilation result for the targeted vehicle
 
