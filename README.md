@@ -1,4 +1,4 @@
-Docker4SITL aims to run SITL (Software In The Loop) of ArduPilot with Docker. So with this solution, any operating systems which support Docker could be run SITL. 
+Docker4SITL aims to run SITL (Software In The Loop) of [ArduPilot](http://ardupilot.org/) with Docker. So with this solution, any operating systems which support Docker could be run SITL. 
 
 For information, the SITL (software in the loop) simulator allows you to run Plane, Copter or Rover without any hardware for ArduPilot project. It is a build of the autopilot code using an ordinary C++ compiler, giving you a native executable that allows you to test the behaviour of the code without hardware. 
 
@@ -12,7 +12,7 @@ For information, the SITL (software in the loop) simulator allows you to run Pla
 * Clone the project
 
 ```bash
-$ git clone ...
+$ git clone https://github.com/mickaelbaron/docker4sitl.git
 ```
 
 * Go to _docker4sitl_ directory and execute the following commands:
