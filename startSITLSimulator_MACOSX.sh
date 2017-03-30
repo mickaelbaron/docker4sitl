@@ -17,4 +17,4 @@ case $1 in
 		exit 0;
 esac
 
-docker run --rm -it --name sitl --privileged -e DISPLAY=$ip:0 -v $(pwd)/logs/$1:/ardupilot/$vehicle/statelogs/logs -v $(pwd)/build_sitl/$1:/ardupilot/build/sitl -v /tmp/.X11-unix:/tmp/.X11-unix -w /ardupilot/$vehicle sitl:latest sim_vehicle.py --aircraft statelogs ${@:2}
+docker run --rm -it --name sitl --privileged -e DISPLAY=$ip:0 -v $(pwd)/logs/$1:/ardupilot/$vehicle/statelogs/logs -v $(pwd)/build_sitl/$1:/ardupilot/build/sitl -v /tmp/.X11-unix:/tmp/.X11-unix -w /ardupilot/$vehicle docker4sitl:latest sim_vehicle.py --aircraft statelogs ${@:2}
