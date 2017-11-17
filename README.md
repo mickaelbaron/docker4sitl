@@ -6,6 +6,7 @@ For information, the SITL (software in the loop) simulator allows you to run Pla
 
 * Docker
 * XQuartz (server X) for Mac OS X
+* socat (Multipurpose relay - SOcket CAT) for Mac OS X
 
 # Build yourself the Docker image
 
@@ -19,7 +20,7 @@ $ git clone https://github.com/mickaelbaron/docker4sitl.git
 
 ```bash
 $ cd docker4sitl
-$ docker build -t docker4sitl
+$ docker build -t docker4sitl src/.
 ```
 
 # Run SITL

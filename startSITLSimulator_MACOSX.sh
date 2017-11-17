@@ -1,9 +1,10 @@
 #!/bin/bash
 
-open -a XQuartz
 # Change the network confiugration. For me it was en5 as example.
-ip=$(ifconfig en5 | grep inet | awk '$1=="inet" {print $2}')
-xhost + $ip
+ip=$(ifconfig|grep 'inet '|grep -v '127.0.0.1'| head -1|awk '{print $2}')
+socat TCP-LISTEN:6001,reuseaddr,fork UNIX-CLIENT:\"$DISPLAY\" &
+SOCAT_SCID_PID=$!
+echo $SOCAT_SCID_PID
 
 case $1 in 
 	plane )
@@ -17,4 +18,6 @@ case $1 in
 		exit 0;
 esac
 
-docker run --rm -it --name sitl --privileged -e DISPLAY=$ip:0 -v $(pwd)/logs/$1:/ardupilot/$vehicle/statelogs/logs -v $(pwd)/build_sitl/$1:/ardupilot/build/sitl -v /tmp/.X11-unix:/tmp/.X11-unix -w /ardupilot/$vehicle docker4sitl:latest sim_vehicle.py --aircraft statelogs ${@:2}
+docker run --rm -it --name sitl -e XAUTHORITY=/tmp/xauth -e DISPLAY=$ip:1 -v $(pwd)/logs/$1:/ardupilot/$vehicle/statelogs/logs -v $(pwd)/build_sitl/$1:/ardupilot/build/sitl -w /ardupilot/$vehicle docker4sitl:latest sim_vehicle.py --aircraft statelogs ${@:2}
+
+kill $SOCAT_SCID_PID
