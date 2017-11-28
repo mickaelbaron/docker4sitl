@@ -23,6 +23,12 @@ $ cd docker4sitl
 $ docker build -t docker4sitl src/.
 ```
 
+# Import the image
+
+```bash
+$ docker load < sitl.tar.gz
+```
+
 # Run SITL
 
 Execute the startSITMSimulator_XXX.sh script where XXX is your operating system (only MAC_OS X is actually supported. Your contributions are welcome).
