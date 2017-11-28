@@ -5,8 +5,8 @@ For information, the SITL (software in the loop) simulator allows you to run Pla
 # Prerequites
 
 * Docker
-* XQuartz (server X) for Mac OS X
-* socat (Multipurpose relay - SOcket CAT) for Mac OS X
+* XQuartz (server X) for Mac OS X => `brew cask install xquartz`
+* socat (Multipurpose relay - SOcket CAT) for Mac OS X => `brew install socat`
 
 # Build yourself the Docker image
 
